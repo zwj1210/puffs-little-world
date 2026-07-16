@@ -5,22 +5,13 @@ import { useEffect, useRef, useState } from "react";
 const BG_IMAGE = "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260713_140344_79e1296a-86d7-43fd-9b5f-63ffe560f291.png&w=1280&q=85";
 const FRONT_VIDEO = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260713_162101_0d7498c5-29bb-47bf-a99f-2773c0a880a9.mp4";
 const OVERLAY_IMAGE = "https://soft-zoom-63098134.figma.site/_assets/v11/3f10f1876e118f72a396e05a6c2d099569478272.png";
-const NAV_ITEMS = ["ToDo List", "日常手杖", "随笔小记", "影像留存"];
+const NAV_ITEMS = ["ToDo List", "日常手账", "随笔小记", "影像留存"];
 
 function Logo() {
   return (
     <svg aria-hidden="true" viewBox="0 0 256 256" className="h-7 w-7" fill="white">
       <path d="M 256 64 L 256 128 L 192.5 128 L 160 95 L 128 64 L 96 95 L 63.5 128 L 64 128 L 128 192 L 128 256 L 64.5 256 L 32 223 L 0 192 L 0 64 L 64 0 L 192 0 Z M 256 192 L 256 256 L 192.5 256 L 160 223 L 128 192 L 128 128 L 192 128 Z" />
     </svg>
-  );
-}
-
-function ReserveButton({ mobile = false }: { mobile?: boolean }) {
-  return (
-    <button className={`liquid-glass relative flex items-center gap-2 rounded-full text-sm font-medium text-white transition-colors hover:bg-white/5 ${mobile ? "px-6 py-3.5" : "px-5 py-3"}`}>
-      <span className="h-2 w-2 rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,.55)]" />
-      Reserve Yours
-    </button>
   );
 }
 
@@ -103,7 +94,6 @@ export default function Home() {
         <nav aria-label="Main navigation" className="liquid-glass absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full p-1.5 md:flex">
           {NAV_ITEMS.map((item) => <a key={item} href="#" className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/5 hover:text-white">{item}</a>)}
         </nav>
-        <div className="hidden md:block"><ReserveButton /></div>
         <button onClick={() => setMenuOpen(true)} aria-label="Open menu" className="liquid-glass flex h-11 w-14 flex-col items-center justify-center gap-1.5 rounded-full md:hidden">
           <span className="h-[1.5px] w-5 bg-white" /><span className="h-[1.5px] w-3.5 bg-white" />
         </button>
@@ -116,13 +106,12 @@ export default function Home() {
         <nav className="flex flex-1 flex-col items-center justify-center gap-7">
           {NAV_ITEMS.map((item, index) => <a key={item} href="#" onClick={() => setMenuOpen(false)} style={{ transitionDelay: menuOpen ? `${100 + index * 60}ms` : "0ms" }} className={`text-3xl font-medium text-white/90 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.18,1)] sm:text-4xl ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>{item}</a>)}
         </nav>
-        <div style={{ transitionDelay: menuOpen ? "360ms" : "0ms" }} className={`mx-auto transition-all duration-700 ease-[cubic-bezier(0.77,0,0.18,1)] ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}><ReserveButton mobile /></div>
       </div>
 
       <section ref={heroRef} className="font-helvetica-neue relative h-screen overflow-hidden bg-[#08090a]">
         <div ref={gridRef} className="absolute -inset-5 z-0 opacity-10 will-change-transform" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%2364748b' stroke-width='.6'/%3E%3C/svg%3E\")" }} />
         <div className="absolute inset-0 z-10 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url("${BG_IMAGE}")` }} />
-        <h1 className="font-instrument pointer-events-none absolute inset-x-0 top-20 z-20 text-center text-[4.5rem] leading-[.9] uppercase tracking-[-.035em] text-white min-[420px]:text-[5.5rem] sm:top-28 sm:text-[10rem] md:top-32 md:text-[13rem] lg:text-[16rem]">Measured</h1>
+        <h1 className="font-instrument pointer-events-none absolute inset-x-0 top-20 z-20 whitespace-nowrap text-center text-[2.75rem] leading-[.9] uppercase tracking-[-.035em] text-white min-[420px]:text-[3.4rem] sm:top-28 sm:text-[5.2rem] md:top-32 md:text-[6.8rem] lg:text-[8.6rem]">PUFF&apos;S LITTLE WORLD</h1>
         <img src={OVERLAY_IMAGE} alt="" className="pointer-events-none absolute inset-0 z-[25] h-full w-full object-cover" />
         <div ref={maskRef} className="pointer-events-none absolute inset-0 z-30" style={{ clipPath: "inset(40% 0 0 0)" }}>
           <video src={FRONT_VIDEO} className="h-full w-full object-cover" autoPlay loop muted playsInline preload="auto" />
