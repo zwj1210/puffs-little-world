@@ -16,12 +16,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .font-helvetica-neue { font-family: "Helvetica Neue Roman", "Helvetica Neue", sans-serif; }
 .font-instrument { font-family: "Instrument Serif", serif; }
 
-.desktop-nav { display: none; }
+.desktop-nav {
+  display: none;
+  right: 2rem;
+  top: 1.75rem;
+}
 .mobile-menu-button { display: flex; }
 
 @media (min-width: 768px) {
   .desktop-nav { display: flex; }
   .mobile-menu-button { display: none; }
+  .hero-title {
+    top: 8rem;
+    font-size: clamp(8.6rem, 9.6vw, 11rem);
+  }
 }
 
 .liquid-glass {

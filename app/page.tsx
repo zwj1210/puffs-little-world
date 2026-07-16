@@ -91,7 +91,7 @@ export default function Home() {
     <main className="h-screen overflow-hidden bg-white">
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 sm:px-8 sm:py-7">
         <a href="#" aria-label="PUFF'S LITTLE WORLD home" className="relative z-10"><Logo /></a>
-        <nav aria-label="Main navigation" className="desktop-nav liquid-glass absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full p-1.5">
+        <nav aria-label="Main navigation" className="desktop-nav liquid-glass absolute items-center gap-1 rounded-full p-1.5">
           {NAV_ITEMS.map((item) => <a key={item} href="#" className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/5 hover:text-white">{item}</a>)}
         </nav>
         <button onClick={() => setMenuOpen(true)} aria-label="Open menu" className="mobile-menu-button liquid-glass h-11 items-center gap-2 rounded-full px-4">
@@ -112,7 +112,7 @@ export default function Home() {
       <section ref={heroRef} className="font-helvetica-neue relative h-screen overflow-hidden bg-[#08090a]">
         <div ref={gridRef} className="absolute -inset-5 z-0 opacity-10 will-change-transform" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%2364748b' stroke-width='.6'/%3E%3C/svg%3E\")" }} />
         <div className="absolute inset-0 z-10 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url("${BG_IMAGE}")` }} />
-        <h1 className="font-instrument pointer-events-none absolute inset-x-0 top-20 z-20 whitespace-nowrap text-center text-[2.75rem] leading-[.9] uppercase tracking-[-.035em] text-white min-[420px]:text-[3.4rem] sm:top-28 sm:text-[5.2rem] md:top-32 md:text-[6.8rem] lg:text-[8.6rem]">PUFF&apos;S LITTLE WORLD</h1>
+        <h1 className="hero-title font-instrument pointer-events-none absolute inset-x-0 top-20 z-20 whitespace-nowrap text-center text-[2.75rem] leading-[.9] uppercase tracking-[-.035em] text-white min-[420px]:text-[3.4rem]">PUFF&apos;S LITTLE WORLD</h1>
         <img src={OVERLAY_IMAGE} alt="" className="pointer-events-none absolute inset-0 z-[25] h-full w-full object-cover" />
         <div ref={maskRef} className="pointer-events-none absolute inset-0 z-30" style={{ clipPath: "inset(40% 0 0 0)" }}>
           <video src={FRONT_VIDEO} className="h-full w-full object-cover" autoPlay loop muted playsInline preload="auto" />
