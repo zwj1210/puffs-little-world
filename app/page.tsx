@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const BG_IMAGE = "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260713_140344_79e1296a-86d7-43fd-9b5f-63ffe560f291.png&w=1280&q=85";
 const FRONT_VIDEO = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260713_162101_0d7498c5-29bb-47bf-a99f-2773c0a880a9.mp4";
 const OVERLAY_IMAGE = "https://soft-zoom-63098134.figma.site/_assets/v11/3f10f1876e118f72a396e05a6c2d099569478272.png";
-const NAV_ITEMS = ["ToDo List", "日常手账", "随笔小记", "影像留存"];
+const NAV_ITEMS = ["ToDo List", "日常手账", "书影记录", "随笔小记", "影像留存"];
 
 function Logo() {
   return (
