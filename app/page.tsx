@@ -91,10 +91,10 @@ export default function Home() {
     <main className="h-screen overflow-hidden bg-white">
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 sm:px-8 sm:py-7">
         <a href="#" aria-label="PUFF'S LITTLE WORLD home" className="relative z-10"><Logo /></a>
-        <nav aria-label="Main navigation" className="liquid-glass absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full p-1.5 sm:flex">
+        <nav aria-label="Main navigation" className="desktop-nav liquid-glass absolute left-1/2 -translate-x-1/2 items-center gap-1 rounded-full p-1.5">
           {NAV_ITEMS.map((item) => <a key={item} href="#" className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/5 hover:text-white">{item}</a>)}
         </nav>
-        <button onClick={() => setMenuOpen(true)} aria-label="Open menu" className="liquid-glass flex h-11 items-center gap-2 rounded-full px-4 sm:hidden">
+        <button onClick={() => setMenuOpen(true)} aria-label="Open menu" className="mobile-menu-button liquid-glass h-11 items-center gap-2 rounded-full px-4">
           <span className="text-[11px] font-medium tracking-[.14em] text-white/90">MENU</span>
           <span className="flex flex-col items-end gap-1.5"><span className="h-[1.5px] w-5 bg-white" /><span className="h-[1.5px] w-3.5 bg-white" /></span>
         </button>

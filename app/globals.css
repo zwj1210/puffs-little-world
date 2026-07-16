@@ -16,6 +16,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .font-helvetica-neue { font-family: "Helvetica Neue Roman", "Helvetica Neue", sans-serif; }
 .font-instrument { font-family: "Instrument Serif", serif; }
 
+.desktop-nav { display: none; }
+.mobile-menu-button { display: flex; }
+
+@media (min-width: 768px) {
+  .desktop-nav { display: flex; }
+  .mobile-menu-button { display: none; }
+}
+
 .liquid-glass {
   background: rgba(255, 255, 255, 0.01);
   background-blend-mode: luminosity;
