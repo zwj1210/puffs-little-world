@@ -92,7 +92,7 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-5 sm:px-8 sm:py-7">
         <a href="#" aria-label="PUFF'S LITTLE WORLD home" className="relative z-10"><Logo /></a>
         <nav aria-label="Main navigation" className="desktop-nav liquid-glass absolute items-center gap-1 rounded-full p-1.5">
-          {NAV_ITEMS.map((item) => <a key={item} href="#" className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/5 hover:text-white">{item}</a>)}
+          {NAV_ITEMS.map((item) => <a key={item} href={item === "书影记录" ? "#/library" : "#"} className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/5 hover:text-white">{item}</a>)}
         </nav>
         <button onClick={() => setMenuOpen(true)} aria-label="Open menu" className="mobile-menu-button liquid-glass h-11 items-center gap-2 rounded-full px-4">
           <span className="text-[11px] font-medium tracking-[.14em] text-white/90">MENU</span>
@@ -105,7 +105,7 @@ export default function Home() {
           <span className="absolute h-[1.5px] w-5 rotate-45 bg-white" /><span className="absolute h-[1.5px] w-5 -rotate-45 bg-white" />
         </button>
         <nav className="flex flex-1 flex-col items-center justify-center gap-7">
-          {NAV_ITEMS.map((item, index) => <a key={item} href="#" onClick={() => setMenuOpen(false)} style={{ transitionDelay: menuOpen ? `${100 + index * 60}ms` : "0ms" }} className={`text-3xl font-medium text-white/90 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.18,1)] sm:text-4xl ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>{item}</a>)}
+          {NAV_ITEMS.map((item, index) => <a key={item} href={item === "书影记录" ? "#/library" : "#"} onClick={() => setMenuOpen(false)} style={{ transitionDelay: menuOpen ? `${100 + index * 60}ms` : "0ms" }} className={`text-3xl font-medium text-white/90 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.18,1)] sm:text-4xl ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>{item}</a>)}
         </nav>
       </div>
 
