@@ -147,7 +147,7 @@ function Detail({ item, scenes, isAdmin, onBack, onEdit, onDelete }: { item: Med
     </dl>{item.description && <p className="record-description">{item.description}</p>}
       {isAdmin && <div className="record-admin"><button onClick={onEdit}>编辑</button><button onClick={onDelete}>删除</button></div>}
     </div>
-    <div className="record-right"><article className="quote-panel"><span>佳句</span><blockquote>{item.quote || "尚未记录"}</blockquote></article><article className="reflection-panel"><span>{item.type === "book" ? "读后感" : "观后感"}</span><p>{item.reflection || "尚未记录"}</p>{item.type === "film" && scenes.length > 0 && <div className="scene-gallery">{scenes.map((scene) => <img key={scene.id} src={scene.image_url} alt={`${item.title} 名场面`} />)}</div>}</article></div>
+    <div className="record-right"><article className="quote-panel"><span>经典语录</span><blockquote>{item.quote || "尚未记录"}</blockquote></article><article className="reflection-panel"><span>{item.type === "book" ? "读后感" : "观后感"}</span><p>{item.reflection || "尚未记录"}</p>{item.type === "film" && scenes.length > 0 && <div className="scene-gallery">{scenes.map((scene) => <img key={scene.id} src={scene.image_url} alt={`${item.title} 名场面`} />)}</div>}</article></div>
   </section>;
 }
 
@@ -156,7 +156,7 @@ function Editor({ item, onClose, onSubmit }: { item: Omit<MediaItem, "id" | "cre
   return <div className="library-modal"><form className="editor-card" onSubmit={onSubmit}><div className="editor-title"><h2>{"id" in item ? "编辑记录" : "添加记录"}</h2><button type="button" onClick={onClose}>×</button></div>
     <input type="hidden" name="type" value={item.type} /><label>封面图片<input name="cover" type="file" accept="image/*" /></label><label>{film ? "片名" : "书名"}<input name="title" required defaultValue={item.title} /></label><label>{film ? "导演" : "作者"}<input name="creator" defaultValue={item.creator} /></label>
     {film && <div className="editor-grid"><label>主演<input name="cast_members" defaultValue={item.cast_members} /></label><label>上映日期<input name="release_date" type="date" defaultValue={item.release_date || ""} /></label><label>类型<input name="genre" defaultValue={item.genre} /></label><label>观影日期<input name="viewed_at" type="date" defaultValue={item.viewed_at || ""} /></label></div>}
-    <label>{film ? "影片简介" : "书籍简介"}<textarea name="description" rows={3} defaultValue={item.description} /></label><label>{film ? "电影名句" : "佳句"}<textarea name="quote" rows={3} defaultValue={item.quote} /></label><label>{film ? "观后感" : "读后感"}<textarea name="reflection" rows={6} defaultValue={item.reflection} /></label>{film && <label>名场面图片（可多选）<input name="scenes" type="file" accept="image/*" multiple /></label>}
+    <label>{film ? "影片简介" : "书籍简介"}<textarea name="description" rows={3} defaultValue={item.description} /></label><label>经典语录<textarea name="quote" rows={3} defaultValue={item.quote} /></label><label>{film ? "观后感" : "读后感"}<textarea name="reflection" rows={6} defaultValue={item.reflection} /></label>{film && <label>名场面图片（可多选）<input name="scenes" type="file" accept="image/*" multiple /></label>}
     <div className="editor-actions"><button type="button" onClick={onClose}>取消</button><button type="submit">保存记录</button></div></form></div>;
 }
 
